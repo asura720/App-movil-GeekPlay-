@@ -93,7 +93,7 @@ fun CreatePostScreen(
     ) { padd ->
         val currentUser = user
         if (currentUser != null && currentUser.bannedUntil != null && currentUser.bannedUntil > System.currentTimeMillis()) {
-            BannedScreen(bannedUntil = currentUser.bannedUntil!!)
+            BannedScreen(bannedUntil = currentUser.bannedUntil)
         } else {
             Column(
             modifier = Modifier
@@ -299,7 +299,7 @@ fun CreatePostScreen(
 
 @Composable
 private fun BannedScreen(bannedUntil: Long) {
-    var remainingTime by remember { mutableStateOf(bannedUntil - System.currentTimeMillis()) }
+    var remainingTime by remember { mutableLongStateOf(bannedUntil - System.currentTimeMillis()) }
 
     LaunchedEffect(Unit) {
         while (remainingTime > 0) {

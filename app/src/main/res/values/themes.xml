@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Theme.GeekPlay.Splash" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">#FF6B00</item>
+
+        <item name="windowSplashScreenAnimatedIcon">@mipmap/ic_launcher_round</item>
+
+        <item name="windowSplashScreenAnimationDuration">1000</item>
+
+        <item name="postSplashScreenTheme">@style/Theme.GeekPlayProyecto</item>
+    </style>
+
+    <style name="Theme.GeekPlayProyecto" parent="android:Theme.Material.Light.NoActionBar" />
+</resources>
